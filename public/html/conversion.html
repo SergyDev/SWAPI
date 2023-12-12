@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <body ng-controller="app.conversion">
+
+        <div class="bienvenida">
+
+            <h1> ¿Cómo funciona la conversión? </h1>
+            <p> Se convierte el precio en base decimal (el nuestro) a base 15 </p>
+            <h2> 0 1 2 3 4 5 6 7 8 9   &szlig; &THORN; &cent; &micro; &para; </h2>
+
+            <div class="tabla" style="margin-top: 30px;">
+                <div class="header-tabla">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre Nave</th>
+                                <th>Modelo</th>
+                                <th>Coste</th>
+                                <th>Conversión</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="starship in starships">
+                                <td>{{starship.name}}</td>
+                                <td>{{starship.model}}</td>
+                                <td>{{starship.cost_in_credits}}</td>
+                                <td>
+                                    <!-- <input class="input" type="number" ng-model="data.numero">
+                                    <button class="datos-tabla" ng-click="convertirBase15()">Aplicar</button>
+                                    <h1 ng-if="aplicar">{{resultadoBase15}}</h1> -->
+                                   
+                                    <input class="input" type="number" ng-model="starship.numeroDecimal">
+                                    <button class="datos-tabla" ng-click="convertirBase15(starship)">Aplicar</button>
+                                    <h1 ng-if="starship.aplicar">{{starship.resultadoBase15}}</h1>
+                                </td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>     
+
+           
+        </div>
+
+        <!-- <script>
+            function convertirBase15() {
+                // Obtener el valor del input en base decimal
+                var numeroDecimal = document.getElementById('decimalInput').value;
+
+                // Realizar la conversión a base 15 utilizando los símbolos específicos
+                var simbolosBase15 = ['&szlig;', '&THORN;', '&cent;', '&micro;', '&para;'];
+                var resultadoBase15 = '';
+
+                while (numeroDecimal > 0) {
+                    var residuo = numeroDecimal % 15;
+                    resultadoBase15 = simbolosBase15[residuo] + resultadoBase15;
+                    numeroDecimal = Math.floor(numeroDecimal / 15);
+                }
+
+                // Mostrar el resultado en la etiqueta <h1>
+                document.getElementById('resultadoBase15').innerHTML = resultadoBase15;
+            }
+        </script> -->
+        
+    </body>
+</html>

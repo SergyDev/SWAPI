@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <base href="/">
+</head>
+<html lang="en" dir="ltr">
+
+<body>
+
+    <div class="tabla" ng-controller="app.pilotos">
+
+        <div class="header-tabla">
+
+
+            <table>
+              <thead>
+                  <tr>
+                      <th>Nombre Nave</th>
+                      <th>Pilotos Asignados</th>
+                      <th>Añadir Piloto</th>
+                      <!-- <th>Información</th> -->
+                  </tr>
+              </thead>
+              <tbody>
+                    <tr ng-repeat="starship in starships">
+                        <td>{{starship.name}}</td>
+                        <td class="pilotos-relacionados" style="display: flex; flex-direction: column;">
+                            <span ng-repeat="relacion in getPilotosRelacionados(starship)">
+                                {{relacion.piloto_name}}
+                            </span>
+                        </td>
+                    <td>
+                        <select class="datos-tabla" ng-model="piloto" ng-options="piloto.name for piloto in pilotos" style="border-radius: 7px;">
+                            <option value="" disabled selected>Elija un piloto</option>
+                        </select>
+                        <button class="datos-tabla" ng-click="addRelation(piloto, starship)">Añadir Piloto</button>
+                        <button class="datos-tabla" ng-click="deleteRelation(piloto, starship)">Eliminar Piloto</button>
+                        
+                    </td>
+                    
+                      
+                    <!-- <td>
+                        <button class="datos-tabla" ng-click="showIds(starship, piloto)">showIDS</button>
+                    </td> -->
+                  </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>     
+        
+</body>
+</html>

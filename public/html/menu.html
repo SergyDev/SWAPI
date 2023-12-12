@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>SWAPI | The Star Wars Database</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+        <link rel="stylesheet" href="app.css">
+        <link rel="shortcut icon" href="favicon.png">
+        
+
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+
+        <link href="https://swapi.tech/api/">
+        <link href="https://swapi.dev/api/">
+        
+    </head>
+    <body>
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <a href="index.php"><label class="logo">SWAPI</label></a>
+                <ul>
+                    <li><a class="active" href="main.php">Inicio</a></li>
+                    <li><a href="naves.php">Naves</a></li>
+                    <li><a href="pilotos.php">Pilotos</a></li>
+                    <li><a href="conversion.php">Conversión</a></li>
+                </ul>
+            </nav>
+
+        <div class="bienvenida">
+
+            <h1> Bienvenido a SWAPI </h1>
+            <p> Esta app permite crear y editar relaciones entre los pilotos y las naves de las películas de STAR WARS </p>
+            <a href="main.php"> <button type="button" class="mostrarlista"> Mostrar Lista </button> </a>
+        </div>
+
+        <!-- <div ng-app>
+            <p>Enter your name:</p>
+            <input type="text" ng-model="name">
+            <h1>Hello, {{name}}!</h1>
+        </div> -->
+
+
+        <!-- <div class="bienvenida">
+            <a href="welcome.blade.php"> <button type="button" class="mostrarlista"> PRUEBA </button> </a>
+        </div> -->
+        
+    </body>
+</html>
